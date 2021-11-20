@@ -13,30 +13,6 @@ exports.createUser = async (req, res) => {
   });
 };
 
-exports.updateUser = async (req, res) => {
-  const data = await Users.findByIdAndUpdate(req.params.id, req.body);
-  res.status(200).json({
-    status: true,
-    data,
-  });
-};
-
-exports.deleteUser = async (req, res) => {
-  const data = await Users.findByIdAndDelete(req.params.id);
-  res.status(204).json({
-    status: true,
-    data,
-  });
-};
-
-exports.getAllUsers = async (req, res) => {
-  const data = await Users.find();
-  res.status(200).json({
-    status: true,
-    data,
-  });
-};
-
 exports.getUser = async (req, res) => {
   const { username, password } = req.body;
   const data = await Users.findOne({ username });
