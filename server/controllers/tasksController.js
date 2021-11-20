@@ -17,7 +17,6 @@ exports.createTask = async (req, res) => {
 };
 
 exports.updateTask = async (req, res) => {
-  console.log("hereee");
   const data = await Tasks.findByIdAndUpdate(req.body._id, req.body);
   res.status(200).json({
     status: true,
